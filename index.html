@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Цветница</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<style>
+       @font-face {
+           font-family: 'Montserrat Alternates';
+           src: url('fonts/MontserratAlternates-Italic.woff2') format('woff2'),
+                url('fonts/MontserratAlternates-Italic.woff') format('woff'),
+                url('fonts/MontserratAlternates-Italic.ttf') format('truetype');
+           font-weight: normal;
+           font-style: italic;
+       }
+   </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1 style="font-family: 'Montserrat Alternates', sans-serif; font-style: italic;">Цветница</h1>
+            <img src="pictures/logo.png" alt="Лого на Цветница" class="logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Начало</a></li>
+                <li><a href="#about">За нас</a></li>
+                <li><a href="#shop">Магазин</a></li>
+                <li><a href="#contact">Контакт</a></li>
+                <a href="#" id="cart-icon"><img src="pictures/cart.jpg" alt="Количка" width="30"></a>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <section id="home" class="home-section">
+            <div class="overlay">
+                <h1 style="font-family: 'Montserrat Alternates', sans-serif; font-style: italic;">Цветница</h1>
+                <p>Вашето място за красиви цветя</p>
+                <a href="#shop" class="shop-button">Отидете на магазина</a>
+            </div>
+        </section>
+
+<section id="about" class="section">
+    <div class="about-container">
+        <div class="about-text">
+            <h2>За нас</h2>
+            <p class="about-quote">"Магазин 'Цветница' е създаден с любов към природата и красотата на цветята."</p>
+            <p>Нашата мисия е да носим радост на всеки, който държи нашите цветя. Ние внимателно подбираме и аранжираме всяко цвете, за да създадем уникални букети и композиции за всеки повод.</p>
+            <ul class="about-values">
+                <li><span class="icon">💖</span> Страст към природата</li>
+                <li><span class="icon">🌱</span> Устойчивост и екологичност</li>
+                <li><span class="icon">🎨</span> Креативност и иновации</li>
+                <li><span class="icon">🤝</span> Персонално обслужване</li>
+                <li><span class="icon">📞</span><a href="#contact" class="scroll-link">Свържете се с нас</a></li>
+            </ul>
+        </div>
+        <div class="about-slider">
+            <div class="slides">
+                <img src="pictures/flowershop3.jpg" alt="About Image 1" class="slide" />
+                <img src="pictures/flowershop2.jpg" alt="About Image 2" class="slide" />
+                <img src="pictures/flowershop1.jpg" alt="About Image 3" class="slide" />
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+          
+        <section id="shop" class="section">
+            <h2>Нашите Продукти</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="pictures/flower1.jpg" alt="Цвете 1">
+                    <h3>Роза</h3>
+                    <p>Цена: 10 лв.</p>
+                    <button onclick="addToCart('Роза', 10)">Добави в количката</button>
+                </div>
+                <div class="product">
+                    <img src="pictures/flower2.jpg" alt="Цвете 2">
+                    <h3>Лале</h3>
+                    <p>Цена: 8 лв.</p>
+                    <button onclick="addToCart('Лале', 8)">Добави в количката</button>
+                </div>
+                <div class="product">
+                    <img src="pictures/daisy.jpg" alt="Цвете 3">
+                    <h3>Маргаритка</h3>
+                    <p>Цена: 7 лв.</p>
+                    <button onclick="addToCart('Mаргаритка', 7)">Добави в количката</button>
+                </div>
+                <div class="product">
+                    <img src="pictures/pansy.jpg" alt="Цвете 4">
+                    <h3>Теменуга</h3>
+                    <p>Цена: 12 лв.</p>
+                    <button onclick="addToCart('Теменуга', 12)">Добави в количката</button>
+                </div>
+                <div class="product">
+                    <img src="pictures/spiderlily.jpg" alt="Цвете 4">
+                    <h3>Амарилис</h3>
+                    <p>Цена: 17 лв.</p>
+                    <button onclick="addToCart('Амарилис', 17)">Добави в количката</button>
+                </div>
+            </div>
+        </section>
+		<section class="section">
+			<h2>Отзиви</h2>
+			<p>Мненията на клиентите ни за нас.</p>
+			<div class="reviews" style="display: flex; justify-content: space-around;">
+				<div class="review">
+					<img src="pictures/petieren.jpg" alt="Petieren" class="profile-pic" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+					<div class="review-text">
+						<h3>Petieren Schoppieren</h3>
+						<div class="star-rating">★★★★★</div>
+						<p>"Цветарница прекрасниерен, цветя вълшебниерен, усмивки вечниерен!"</p>
+					</div>
+				</div>
+				<div class="review">
+					<img src="pictures/hrisipisi.png" alt="Hristiqn" class="profile-pic">
+					<div class="review-text">
+						<h3>Nefedqn Hristov</h3>
+						<div class="star-rating">★★★★☆</div>
+						<p>"Много ми хареса."</p>
+					</div>
+				</div>
+				<div class="review">
+					<img src="pictures/volensiderov.jpg" alt="Volen Siderov" class="profile-pic">
+					<div class="review-text">
+						<h3>Volen Siderov</h3>
+						 <div class="star-rating">★★★★★</div>
+						<p>"Надмина очакванията ми. Ще си поръчвам пак."</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="close-modal">&times;</span>
+                <h2>Вашата количка</h2>
+                <div id="cart-items">
+                    <p>Количката ви е празна.</p>
+                </div>
+                <div id="cart-total">
+                    <h3>Обща сума: <span id="total-amount">0</span> лв.</h3>
+                </div>
+                <!-- Add the delivery date input -->
+                <label for="delivery-date">Дата на доставка:</label>
+                <input type="date" id="delivery-date" required />
+                <button id="checkout-btn" onclick="openCheckout()">Плащане</button>
+            </div>
+        </div> 
+
+        <div id="checkout-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-button" id="close-checkout-modal">&times;</span>
+                <div id="checkout-steps">
+                    <div class="step" id="step1">
+                        <h3>Стъпка 1: Информация за доставка</h3>
+                        <label for="delivery-name">Име:</label>
+                        <input type="text" id="delivery-name" placeholder="Вашето име" required />
+                        
+                        <label for="delivery-address">Адрес:</label>
+                        <input type="text" id="delivery-address" placeholder="Вашият адрес" required />
+        
+                        <label for="delivery-phone">Телефон:</label>
+                        <input type="tel" id="delivery-phone" placeholder="Вашият телефон" required />
+        
+                        <button onclick="nextStep(2)">Следваща стъпка</button>
+                    </div>
+        
+                    <div class="step" id="step2" style="display: none;">
+                        <h3>Стъпка 2: Плащане</h3>
+                        <label for="card-number">Номер на карта:</label>
+                        <input type="text" id="card-number" placeholder="XXXXXXXXXXXXXXXX" required />
+                        
+                        <label for="expiry-date">Срок на валидност:</label>
+                        <input type="text" id="expiry-date" placeholder="ММ/ГГ" required />
+                        
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" placeholder="XXX" required />
+                        
+                        <button onclick="completePayment()">Плати</button>
+                    </div>
+        
+                    <div class="step" id="step3" style="display: none;">
+                        <h3>Стъпка 3: Потвърждение</h3>
+                        <p>Вашата поръчка е успешна!</p>
+                        <p>Благодарим ви, че пазарувахте при нас!</p>
+                        <button onclick="closeCheckout()">Завърши</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="contact" class="section">
+            <h2>Контакт</h2>
+
+            <div class="contact-container">
+                <!-- Contact Form -->
+                <form id="contact-form">
+                    <label for="name">Име:</label>
+                    <input type="text" id="name" placeholder="Иван Иванов" required />
+
+                    <label for="email">Имейл:</label>
+                    <input type="email" id="email" placeholder="example@mail.com" required />
+
+                    <label for="message">Съобщение:</label>
+                    <textarea id="message" placeholder="Вашето съобщение..." required></textarea>
+
+                    <button type="submit">Изпрати</button>
+                </form>
+
+                <div class="contact-info">
+                    <h3>Информация за контакт</h3>
+                    <p>
+                        <span class="icon">📍</span>
+                        Адрес:
+                        <a href="https://www.google.com/maps/place/Your+Location" target="_blank">Burgas, 02 BG</a>
+                    </p>
+                    <p>
+                        <span class="icon">📞</span>
+                        Телефон:
+                        <a href="tel:+359123456789">+359 123 456 789</a>
+                    </p>
+                    <p>
+                        <span class="icon">✉️</span>
+                        Имейл:
+                        <a href="mailto:your-email@example.com">your-email@example.com</a>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" style="display: none;">&#8679;</button>
+
+
+    <footer>
+        <p>&copy; 2024 Цветница. Всички права запазени.</p>
+    </footer>
+</body>
+
+</html>
