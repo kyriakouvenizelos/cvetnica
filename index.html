@@ -81,37 +81,55 @@
             <h2>Нашите Продукти</h2>
             <div class="products">
                 <div class="product">
-                    <img src="pictures/flower1.jpg" alt="Цвете 1">
+                    <img src="pictures/flower1.jpg" alt="Цвете 1"
+                        onclick="openFlowerModal('Роза', 'Класическа червена роза, символ на любовта и страстта.', 10, 'pictures/flower1.jpg')">
                     <h3>Роза</h3>
                     <p>Цена: 10 лв.</p>
                     <button onclick="addToCart('Роза', 10)">Добави в количката</button>
                 </div>
                 <div class="product">
-                    <img src="pictures/flower2.jpg" alt="Цвете 2">
+                    <img src="pictures/flower2.jpg" alt="Цвете 2"
+                        onclick="openFlowerModal('Лале', 'Красиво лале в ярки цветове, символ на пролетта и новото начало.', 8, 'pictures/flower2.jpg')">
                     <h3>Лале</h3>
                     <p>Цена: 8 лв.</p>
                     <button onclick="addToCart('Лале', 8)">Добави в количката</button>
                 </div>
                 <div class="product">
-                    <img src="pictures/daisy.jpg" alt="Цвете 3">
+                    <img src="pictures/daisy.jpg" alt="Цвете 3"
+                        onclick="openFlowerModal('Маргаритка', 'Нежна маргаритка, символ на чистота и невинност.', 7, 'pictures/daisy.jpg')">
                     <h3>Маргаритка</h3>
                     <p>Цена: 7 лв.</p>
-                    <button onclick="addToCart('Mаргаритка', 7)">Добави в количката</button>
+                    <button onclick="addToCart('Маргаритка', 7)">Добави в количката</button>
                 </div>
                 <div class="product">
-                    <img src="pictures/pansy.jpg" alt="Цвете 4">
+                    <img src="pictures/pansy.jpg" alt="Цвете 4"
+                        onclick="openFlowerModal('Теменуга', 'Изящна теменуга с наситени цветове, символ на мисли и спомени.', 12, 'pictures/pansy.jpg')">
                     <h3>Теменуга</h3>
                     <p>Цена: 12 лв.</p>
                     <button onclick="addToCart('Теменуга', 12)">Добави в количката</button>
                 </div>
                 <div class="product">
-                    <img src="pictures/spiderlily.jpg" alt="Цвете 4">
+                    <img src="pictures/spiderlily.jpg" alt="Цвете 5"
+                        onclick="openFlowerModal('Амарилис', 'Екзотичен амарилис, известен със своите величествени и екзотични цветове.', 17, 'pictures/spiderlily.jpg')">
                     <h3>Амарилис</h3>
                     <p>Цена: 17 лв.</p>
                     <button onclick="addToCart('Амарилис', 17)">Добави в количката</button>
                 </div>
             </div>
         </section>
+		
+		<!-- Flower Modal -->
+        <div id="flower-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-button" id="close-flower-modal">&times;</span>
+                <img id="flower-image" src="" alt="Flower Image">
+                <h3 id="flower-name">Име на цветето</h3>
+                <p id="flower-description">Описание на цветето</p>
+                <p>Цена: <span id="flower-price"></span> лв.</p>
+            </div>
+        </div>
+        </section>
+		
 		<section class="section">
 			<h2>Отзиви</h2>
 			<p>Мненията на клиентите ни за нас.</p>
