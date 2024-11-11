@@ -308,3 +308,41 @@ window.onclick = function(event) {
         document.getElementById('flower-modal').style.display = 'none';
     }
 }
+
+// Function to open the flower modal and set the details
+function openFlowerModal(name, description, price, imgSrc) {
+    document.getElementById("flower-name").innerText = name;
+    document.getElementById("flower-description").innerText = description;
+    document.getElementById("flower-price").innerText = price;
+    document.getElementById("flower-image").src = imgSrc;
+
+    // Show the modal
+    document.getElementById("flower-modal").style.display = "block";
+
+    // Add the document-level click event listener after a small delay
+    setTimeout(() => {
+        document.addEventListener("click", closeModalOutsideClick);
+    }, 0);
+}
+
+// Function to close the flower modal
+function closeModal() {
+    document.getElementById("flower-modal").style.display = "none";
+
+    // Remove the document-level click event listener to prevent issues
+    document.removeEventListener("click", closeModalOutsideClick);
+}
+
+// Close the flower modal when clicking outside the modal content
+function closeModalOutsideClick(event) {
+    const modalContent = document.querySelector("#flower-modal .modal-content");
+    const modal = document.getElementById("flower-modal");
+
+    // Check if the modal is open and the click is outside the modal content
+    if (modal.style.display === "block" && !modalContent.contains(event.target)) {
+        closeModal();
+    }
+}
+
+// Close the flower modal when clicking the close button
+document.getElementById("close-flower-modal").onclick = closeModal;
