@@ -346,3 +346,51 @@ function closeModalOutsideClick(event) {
 
 // Close the flower modal when clicking the close button
 document.getElementById("close-flower-modal").onclick = closeModal;
+
+// Format the credit card input as ####-####-####-####
+document.getElementById("credit-card").addEventListener("input", function (event) {
+    let input = event.target.value.replace(/\D/g, "");  // Remove all non-numeric characters
+    input = input.match(/.{1,4}/g)?.join("-") || "";    // Add dashes every 4 digits
+    event.target.value = input.slice(0, 19);            // Limit to 19 characters
+});
+
+// Restrict the CVV field to numbers only
+document.getElementById("cvv").addEventListener("input", function (event) {
+    event.target.value = event.target.value.replace(/\D/g, "").slice(0, 3);  // Remove non-numeric and limit to 3 digits
+});
+document.getElementById("phone-number").addEventListener("input", function (event) {
+    event.target.value = event.target.value.replace(/\D/g, "").slice(0, 10);  // Remove non-numeric characters and limit to 10 digits
+});
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("dark-mode-toggle").addEventListener("click", function () {
+        // Toggle dark mode class on the body
+        document.body.classList.toggle("dark-mode");
+
+        // Target the cart icon image
+        const cartImage = document.querySelector("#cart-icon img");
+
+        // Check if the cart image element is found and toggle its source
+        if (cartImage) {
+            if (document.body.classList.contains("dark-mode")) {
+                cartImage.src = "pictures/cart-dark.png"; // Path to dark mode cart icon
+            } else {
+                cartImage.src = "pictures/cart.jpg"; // Path to light mode cart icon
+            }
+        } else {
+            console.error("Cart icon image not found");
+        }
+		const icon = document.getElementById("dark-mode-icon");
+		if (document.body.classList.contains("dark-mode")) {
+        icon.src = "pictures/light.png"; // Dark mode icon image
+		} else {
+        icon.src = "pictures/dark.png"; // Light mode icon image
+		}
+    });
+});
+document.getElementById("expiration-date").addEventListener("input", function (event) {
+    let input = event.target.value.replace(/\D/g, "");  // Remove all non-numeric characters
+    if (input.length > 2) {
+        input = input.slice(0, 2) + "/" + input.slice(2); // Insert "/" after the month digits
+    }
+    event.target.value = input.slice(0, 5);            // Limit to 5 characters (MM/YY format)
+});

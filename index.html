@@ -28,15 +28,21 @@
 <body>
     <header>
         <div class="header-content">
-            <h1 style="font-family: 'Montserrat Alternates', sans-serif; font-style: italic;">Цветница</h1>
+            <h1 style="font-family: 'Montserrat Alternates', sans-serif; font-style: italic;">Цветница</h1>		
             <a href="#home"><img src="pictures/logo.png" alt="Лого на Цветница" class="logo"/></a>
+			
         </div>
         <nav>
             <ul>
+			
                 <li><a href="#home">Начало</a></li>
                 <li><a href="#about">За нас</a></li>
                 <li><a href="#shop">Магазин</a></li>
                 <li><a href="#contact">Контакт</a></li>
+				<button id="dark-mode-toggle" style="border: none; outline: none; box-shadow: none; background: none; padding: 0;">
+				<img id="dark-mode-icon" src="pictures/dark.png" alt="Toggle Dark Mode" width="30" height="30">
+			</button>
+			<li></li>
                 <a href="#" id="cart-icon"><img src="pictures/cart.jpg" alt="Количка" width="30"></a>
             </ul>
         </nav>
@@ -120,7 +126,7 @@
             </div>
         </section>
 		
-		<<div id="flower-modal" class="modal" style="display: none;">
+		<div id="flower-modal" class="modal" style="display: none;">
             <div class="modal-content">
                 <span class="close-button" id="close-flower-modal">&times;</span>
                 <img id="flower-image" src="" alt="Flower Image">
@@ -189,22 +195,25 @@
                         <label for="delivery-address">Адрес:</label>
                         <input type="text" id="delivery-address" placeholder="Вашият адрес" required />
         
-                        <label for="delivery-phone">Телефон:</label>
-                        <input type="tel" id="delivery-phone" placeholder="Вашият телефон" required />
+                        <label for="phone-number">Номер:</label>
+						<input type="text" id="phone-number" placeholder="0888888888" maxlength="10" />
+
         
                         <button onclick="nextStep(2)">Следваща стъпка</button>
                     </div>
         
                     <div class="step" id="step2" style="display: none;">
                         <h3>Стъпка 2: Плащане</h3>
-                        <label for="card-number">Номер на карта:</label>
-                        <input type="text" id="card-number" placeholder="XXXXXXXXXXXXXXXX" required />
+                        <<label for="credit-card">Карта:</label>
+						<input type="text" id="credit-card" placeholder="1234-5678-9012-3456" maxlength="19" />
+
                         
-                        <label for="expiry-date">Срок на валидност:</label>
-                        <input type="text" id="expiry-date" placeholder="ММ/ГГ" required />
+                        <label for="expiration-date">Срок на изтичане (MM/YY)</label>
+						<input type="text" id="expiration-date" placeholder="MM/YY" maxlength="5" />
+
                         
                         <label for="cvv">CVV:</label>
-                        <input type="text" id="cvv" placeholder="XXX" required />
+						<input type="text" id="cvv" maxlength="3" placeholder="123" />
                         
                         <button onclick="completePayment()">Плати</button>
                     </div>
@@ -232,7 +241,7 @@
                     <input type="email" id="email" placeholder="example@mail.com" required />
 
                     <label for="message">Съобщение:</label>
-                    <textarea id="message" placeholder="Вашето съобщение..." required></textarea>
+                    <textarea id="email-message" placeholder="Вашето съобщение..." required></textarea>
 
                     <button type="submit">Изпрати</button>
                 </form>
